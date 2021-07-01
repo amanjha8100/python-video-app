@@ -7,13 +7,13 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 
+
 envpath = os.path.dirname(os.path.realpath(__file__))
 load_dotenv(os.path.join(envpath,'.env'))
 twilio_account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
 twilio_api_key_sid = os.environ.get('TWILIO_API_KEY_SID')
 twilio_api_key_secret = os.environ.get('TWILIO_API_KEY_SECRET')
-twilio_client = Client(twilio_api_key_sid, twilio_api_key_secret,
-                       twilio_account_sid)
+twilio_client = Client(twilio_api_key_sid, twilio_api_key_secret,twilio_account_sid)
 
 app = Flask(__name__)
 
@@ -56,5 +56,5 @@ def login():
             'conversation_sid': conversation.sid}
 
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
