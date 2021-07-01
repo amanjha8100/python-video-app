@@ -56,5 +56,5 @@ def login():
             'conversation_sid': conversation.sid}
 
 
-if __name__ == '__main__':
-    app.run(host='.pythonanywhere.com')
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0')
