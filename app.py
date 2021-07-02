@@ -53,7 +53,6 @@ def login():
                         twilio_api_key_secret, identity=username)
     token.add_grant(VideoGrant(room='My Room'))
     token.add_grant(ChatGrant(service_sid=conversation.chat_service_sid))
-
     return {'token': token.to_jwt().decode(),
             'conversation_sid': conversation.sid}
 
