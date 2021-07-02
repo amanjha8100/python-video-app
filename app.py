@@ -5,6 +5,8 @@ from twilio.jwt.access_token import AccessToken
 from twilio.jwt.access_token.grants import VideoGrant, ChatGrant
 from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
+from flask_cors import CORS
+
 
 
 
@@ -16,7 +18,7 @@ twilio_api_key_secret = os.environ.get('TWILIO_API_KEY_SECRET')
 twilio_client = Client(twilio_api_key_sid, twilio_api_key_secret,twilio_account_sid)
 
 app = Flask(__name__)
-
+CORS(app)
 
 def get_chatroom(name):
     for conversation in twilio_client.conversations.conversations.stream():
