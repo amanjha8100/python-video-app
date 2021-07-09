@@ -34,6 +34,7 @@ def index():
     return render_template('index.html')
 
 
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.get_json(force=True).get('username')
